@@ -1,0 +1,729 @@
+@include-when-export url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
+@include-when-export url(https://fonts.googleapis.com/css?family=Raleway:600,400&subset=latin,latin-ext);
+
+@charset "UTF-8";
+@font-face {
+	font-family: 'TeXGyreAdventor';
+	font-style: normal;
+	font-weight: normal;
+	src: url(./gothic-dark/texgyreadventor-regular.otf);
+}
+@font-face {
+	font-family: 'TeXGyreAdventor';
+	font-style: normal;
+	font-weight: bold;
+	src: url(./gothic-dark/texgyreadventor-bold.otf);
+}
+@font-face {
+	font-family: 'TeXGyreAdventor';
+	font-style: italic;
+	font-weight: normal;
+	src: url(./gothic-dark/texgyreadventor-italic.otf);
+}
+@font-face {
+	font-family: 'TeXGyreAdventor';
+	font-style: italic;
+	font-weight: bold;
+	src: url(./gothic-dark/texgyreadventor-bolditalic.otf);
+}
+
+:root {
+   --typora-center-window-title: true;
+   --bg-color:  #1b1b1b; /*change background*/
+   --text-color: #ddd; /*change text color*/
+   --control-text-color: #ddd;
+   --md-char-color: #ddd; /*change color of meta characetrs like `*` in markdown */
+   --meta-content-color: #5b808d; /*change color of meta contents like image text or link address in markdown */
+
+   --primary-color: #428bca; /* color of primary buttons */
+   --primary-btn-border-color: #285e8e;
+   --primary-btn-text-color: #ddd;
+   
+   --window-border: none;
+
+   --active-file-bg-color: #555; /*background color if list item in file tree or file list*/
+   --active-file-text-color: inherit;
+   --active-file-border-color: #777;
+
+   --side-bar-bg-color: var(--bg-color); /*change background of sidebar*/
+   --item-hover-bg-color: #444; /*background of control items when hover, like menu in sidebar*/
+   --item-hover-text-color: inherit;
+   --monospace: monospace; /*monospace font for codes, fences*/
+  /* codeblock color */
+  --code-red-color: #FF75B5;
+  --code-yellow-color: #FFB86C;
+  --code-cyan-color: #19f9d8;
+  --code-blue-color: #6FC1FF;
+  --code-purple-color: #FF75B5;
+  --code-orange-color: #FFB86C;
+  --code-green-color: #19f9d8;
+  --code-grey-color: hsl(220, 9%, 55%);
+
+  --code-select-bg-color: rgb(64, 72, 89);
+  --code-cursor-color: hsl(220, 100%, 66%);
+}
+
+.cm-s-typora-default {
+  /*styles for h1~h6 in source code mode*/
+  font-family: monospace;
+}
+
+/* selected text and cursor */
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+  background: var(--code-select-bg-color) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 2px solid var(--code-cursor-color);
+  z-index: 3;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 3px solid var(--code-cursor-color);
+}
+
+/* highlight */
+.cm-s-inner .cm-property {
+  color: var(--code-blue-color) !important;
+}
+
+.cm-s-inner .cm-operator {
+  color: var(--code-cyan-color) !important;
+}
+
+.cm-s-inner .cm-keyword {
+  color: var(--code-purple-color) !important;
+}
+
+.cm-s-inner .cm-tag {
+  color: var(--code-red-color) !important;
+}
+
+.cm-s-inner .cm-attribute {
+  color: var(--code-orange-color) !important;
+}
+
+.cm-s-inner .cm-string {
+  color: var(--code-green-color) !important;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+  /*     color: var(--code-orange-color) !important; */
+  color: var(--code-grey-color) !important;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+  /*     color: var(--code-red-color) !important; */
+  color: var(--code-blue-color) !important;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+  color: var(--code-red-color) !important;
+}
+
+.cm-s-inner .cm-builtin {
+  /*     color: var(--code-blue-color) !important; */
+  color: var(--code-cyan-color) !important;
+}
+
+.cm-s-inner .cm-bracket {
+  color: var(--text-color1) !important;
+}
+
+.cm-s-inner .cm-number {
+  color: var(--code-orange-color) !important;
+}
+
+.cm-s-inner .cm-variable {
+  color: var(--text-color) !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+  /*     color: var(--code-blue-color) !important; */
+  color: var(--code-yellow-color) !important;
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+  color: var(--code-red-color) !important;
+}
+
+.cm-s-typora-default .cm-string {
+  /*     color: var(--code-blue-color); */
+  color: var(--code-purple-color);
+}
+
+.cm-s-typora-default .cm-atom {
+  color: var(--code-grey-color);
+}
+
+.cm-s-typora-default .cm-number {
+  color: var(--code-orange-color);
+  font-style: normal !important;
+}
+
+.cm-s-typora-default .cm-link {
+  color: var(--code-blue-color);
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background: var(--item-hover-bg-color);
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+  color: var(--code-purple-color);
+}
+
+.cm-s-typora-default .cm-tag {
+  /*     color: var(--code-red-color); */
+  color: var(--code-blue-color);
+}
+
+.cm-s-typora-default .cm-strong,
+.cm-s-typora-default .cm-em,
+.cm-s-typora-default .cm-del {
+  /*     color: var(--code-green-color); */
+  color: var(--code-orange-color);
+}
+
+.cm-s-typora-default .cm-block-start.cm-variable-2 {
+  /*     color: var(--code-orange-color); */
+  color: var(--code-red-color);
+}
+
+.cm-formatting-task .cm-formatting-task {
+  color: var(--code-red-color);
+}
+
+.mac-seamless-mode #typora-sidebar {
+	top: var(--mac-title-bar-height);
+	padding-top: 0;
+	height: auto;
+}
+
+html,
+body,
+#write{
+	background: #1b1b1b;
+	font-family: 'TeXGyreAdventor', "Century Gothic", 'Yu Gothic', 'Raleway', "STHeiti", sans-serif;
+	font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #ddd;
+	font-family: 'TeXGyreAdventor', "Century Gothic", 'Yu Gothic', 'Ubuntu', "STHeiti", sans-serif;
+}
+
+html {
+	font-size:16px;
+}
+
+#write {
+	max-width: 914px;
+	text-align: justify;
+}
+
+#write>h1:first-child {
+	margin-top: 2.75rem;
+}
+#write>h2:first-child {
+	margin-top: 1.75rem;
+}
+#write>h3:first-child {
+	margin-top: 1rem;
+}
+#write>h4:first-child {
+	margin-top: 0.5rem;
+}
+h1 {
+	font-weight: normal;
+	line-height: 4rem;
+	margin: 0 0 1.75rem;
+	padding: 20px 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 4rem;
+}
+h2 {
+	font-weight: normal;
+	line-height: 3rem;
+	margin: 0 0 1.9375rem;
+	padding: 0 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 3rem
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-weight: normal;
+}
+h5 {
+	font-size: 1.125rem;
+	font-weight: normal;
+}
+h6 {
+	font-size: 1rem;
+	font-weight: bold;
+}
+p {
+	font-size: 1rem;
+	line-height: 1.75rem;
+	margin: 0 0 1.25rem;
+}
+#write>h3.md-focus:before {
+	left: -1.875rem;
+	top: 0.5rem;
+	padding: 2px;
+}
+#write>h4.md-focus:before {
+	left: -1.875rem;
+	top: 0.3125rem;
+	padding: 2px;
+}
+#write>h5.md-focus:before {
+	left: -1.875rem;
+	top: 0.25rem;
+	padding: 2px;
+}
+#write>h6.md-focus:before {
+	left: -1.875rem;
+	top: .125rem;
+	padding: 2px;
+}
+/*@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before {
+		top: 1px;
+	}
+	p {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}*/
+@media screen and (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+}
+a,
+.md-def-url {
+	color: #1f65d6;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	margin-bottom: 20px
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+code {
+	background: #222;
+	color: #ddd;
+	border: 2px solid #444;
+	padding: .3em;
+  	padding-top: 0.15em;
+  	padding-bottom: 0.15em;
+	font-size: 0.9em;
+}
+.md-fences {
+	color: #ddd;
+	background: #222;
+	border: 1px solid #aaa;
+	margin: 0 0 20px;
+	font-size: 1em;
+	padding: 0.3em 1em;
+  	padding-top: 0.4em;
+}
+
+blockquote {
+	margin: 0 0 1.11111rem;
+	padding: 0.5rem 1.11111rem 0 1.05556rem;
+	border-left: 1px solid gray;
+}
+blockquote,
+blockquote p {
+	line-height: 1.6;
+	color: #6f6f6f;
+}
+#write pre.md-meta-block {
+	min-height: 30px;
+	background: #f8f8f8;
+	padding: 1.5em;
+	font-weight: 300;
+	font-size: 1em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+    margin-top: -1.5em;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+}
+.MathJax_Display {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+.md-image>.md-meta {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.md-image>img {
+	margin-top: 2px;
+}
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+/* switch between different mode */
+#typora-source {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+	color: #ddd;
+}
+
+.typora-sourceview-on #typora-source {
+  visibility: visible;
+  opacity: 1;
+}
+
+#typora-source .CodeMirror-lines {
+  max-width: 800px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+#write {
+  display: block !important;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+  max-width: 800px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.typora-sourceview-on #write {
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+/* exit source view button */
+.typora-sourceview-on #toggle-sourceview-btn {
+  background-color: var(--bg-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+#ty-tooltip {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+/** ui for windows **/
+#md-searchpanel {
+    border-bottom: 1px solid #ccc;
+}
+
+#md-searchpanel .btn {
+    border: 1px solid #ccc;
+}
+
+#md-notification:before {
+	top: 14px;
+}
+
+#md-notification {
+	background: #eee;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+#typora-sidebar {
+	box-shadow: none;
+	background: #1b1b1b;
+	color: #ddd;
+}
+
+
+
+.file-list-item ,
+.show-folder-name .file-list-item {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 20px;
+}
+
+.file-list-item-summary {
+	height: 40px;
+	line-height: 20px;
+}
+
+
+/*CHECKBOXES*/
+
+.md-task-list-item > input:before, input[type=checkbox]:before {
+    border-radius: 0.2rem;
+    margin-top: -0.08rem;
+    margin-left: -0.1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--borders);
+	content: " ";
+    display: block;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.md-task-list-item:hover > input:before, input[type=checkbox]:hover:before {
+    background-color: var(--boxes-darker);
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before, input[type=checkbox]:checked:before {
+    background-color: rgb(56, 132, 255);
+}
+
+.md-task-list-item:hover > input:checked:before,
+.md-task-list-item:hover > input[checked]:before, input[type=checkbox]:hover:checked:before {
+    background-color: #1f65d6;
+}
+
+.md-task-list-item > input:after,
+.md-task-list-item > input:after, input[type=checkbox]:after {
+    transform: rotate(-45deg);
+	position: absolute;
+	border: 2px solid white;
+	border-top: 0;
+    border-right: 0;
+	top: 0.16rem;
+	left: 0.1rem;
+	width: 0.6rem;
+	height: 0.375rem;
+    content: " ";
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after, input[type=checkbox]:checked:after {
+    opacity: 1;
+}
+
+.ty-preferences input[type=checkbox]:before {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.ty-preferences input[type=checkbox]:after {
+    width: 0.5rem;
+    height: 0.32rem;
+    top: 0.19rem;
+    left: 0.14rem;
+}
+
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    line-height: 1.45;
+    background-color: #29303c;
+    border: 0;
+    border-radius: 0.3rem;
+    color: var(--text-color1);
+    border-left: solid 4px #5b697e;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: var(--md-char-color);
+    opacity: 1;
+}
+
+.md-toc {
+    margin: 1.5rem 0rem;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #555 !important;
+  border-radius: 4px;
+}
+
+/* scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #999 !important;
+  border-radius: 4px;
+}
+
+mark {
+    background-color: #FFB86C;
+    border-radius: 3px;
+    padding: 1px 3px 1px 3px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    line-height: 1.45;  
+    background-color: #222;
+    border: 0;
+    border-radius: 0.3rem;
+    color: var(--text-color1);
+    border-left: solid 4px #aaa;
+}
+
+/* link */
+#write a:not([role="menuitem"]) {
+  color: var(--code-blue-color) !important;
+}
+
+#write a:not([role="menuitem"]):hover {
+  color: var(--code-blue-color) !important;
+}
+
+
+.task-list-done {
+    text-decoration: line-through;
+    color: hsl(220, 6%, 45%);
+}
