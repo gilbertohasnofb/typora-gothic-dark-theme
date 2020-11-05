@@ -230,11 +230,6 @@ html {
 	font-size:16px;
 }
 
-#write {
-	max-width: 914px;
-	text-align: justify;
-}
-
 #write>h1:first-child {
 	margin-top: 2.75rem;
 }
@@ -304,44 +299,7 @@ p {
 	top: .125rem;
 	padding: 2px;
 }
-/*@media screen and (min-width: 48em) {
-	.h1,
-	h1 {
-		font-size: 3.250rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.298rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.625rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.250rem;
-	}
-	.h5,
-	h5 {
-		font-size: 1.150rem;
-	}
-	.h6,
-	h6 {
-		font-size: 1rem;
-	}
-	#write>h4.md-focus:before,
-	#write>h5.md-focus:before,
-	#write>h6.md-focus:before {
-		top: 1px;
-	}
-	p {
-		font-size: 1.25rem;
-		line-height: 1.8;
-	}
-	table {
-		font-size: 1.25rem;
-	}
-}*/
+
 @media screen and (max-width: 48em) {
 	blockquote {
 		margin-left: 1rem;
@@ -499,13 +457,14 @@ p.mathjax-block,
 }
 
 #write {
-  display: block !important;
+  display: block;
   visibility: visible;
   opacity: 1;
   transition: 0.3s;
   max-width: 800px;
   padding-left: 70px;
   padding-right: 70px;
+  text-align: justify;
 }
 
 .typora-sourceview-on #write {
@@ -726,4 +685,11 @@ mark {
 .task-list-done {
     text-decoration: line-through;
     color: hsl(220, 6%, 45%);
+}
+
+kbd {
+  background: #222;
+  color: #ddd;
+  border-color: #444;
+  box-shadow: 0 2px 0 #333;
 }
